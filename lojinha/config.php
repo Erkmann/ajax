@@ -6,4 +6,4 @@
  * Time: 20:01
  */
 
-define('BASE_URL', 'http://localhost/lojinha-master/', true );
+define('BASE_URL', 'http://localhost/lojinha/', true );
