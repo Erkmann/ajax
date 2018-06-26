@@ -7,7 +7,20 @@
         $(document).ready(function(){
 
            $("#btload").click(function(){
-              $("#conteudo").load('http://hawkman.fabricadesoftware.ifc.edu.br/~rafael/lojinha/ajax/categorias_json.php');
+             $.get('http://hawkman.fabricadesoftware.ifc.edu.br/~rafael/lojinha/ajax/dados_json.php', function (resultado) {
+                 $('#conteudo').html("<li>"+resultado.campus+"</li>");
+                 $('#conteudo').append("<li>"+resultado.endereco+"</li>");
+                 $('#conteudo').append("<li>"+resultado.ies+"</li>");
+                 $('#conteudo').append("<li>"+resultado.municipio+"</li>");
+                 $('#conteudo').append("<li>"+resultado.uf+"</li>");
+                 $('#conteudo').append("<li>"+resultado.cursos[0]+"</li>");
+                 $('#conteudo').append("<li>"+resultado.cursos[1]+"</li>");
+                 $('#conteudo').append("<li>"+resultado.cursos[2]+"</li>");
+
+
+                 
+                 
+             });
            });
 
            $("#btGet").click(function (){
@@ -15,6 +28,8 @@
            $.get('http://hawkman.fabricadesoftware.ifc.edu.br/~rafael/lojinha/ajax/produtos.php',{categoria:$("#cat").val()} ,function (data){
                $("#conteudo").html(data);
            });
+           
+           
 
            });
 
